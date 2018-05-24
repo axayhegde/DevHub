@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 class CreateLinkForm extends Component {
 
@@ -26,13 +27,13 @@ class CreateLinkForm extends Component {
        e.preventDefault();
        console.log(this.props.linkdata);
 
-        this.props.handler(this.state);
+        this.props.OnNewLinkAdded(this.state);
     } ;
 
     render() {
 
         return (
-            <div>
+            <div class="card px-5 py-5 text-center">
                 <form>
                     <input type="text" name="link" value={this.state.link} placeholder="link" onChange={event => this.handleInputChange(event)}/><br/>
                     <input type="text" name="tags" value={this.state.tags} placeholder="tags" onChange={event => this.handleInputChange(event)}/><br/>
